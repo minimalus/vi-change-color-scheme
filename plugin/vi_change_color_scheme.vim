@@ -8,18 +8,30 @@ python sys.path.append(vim.eval('expand("<sfile>:h")'))
 " --------------------------------
 "  Function(s)
 " --------------------------------
-function! TemplateExample()
+function! NextColorScheme()
 python << endOfPython
+schemes = vim.eval("g:vi_change_color_scheme_list")
+cur_scheme_idx = int(vim.eval("g:vi_change_color_scheme_default"))
+cur_scheme_idx = (cur_scheme_idx+1) % len(schemes)
+vim.command("let g:vi_change_color_scheme_default = " + str(cur_scheme_idx))
+vim.command('colorscheme ' + schemes[cur_scheme_idx])
+print "Colorscheme set to:",schemes[cur_scheme_idx]
+endOfPython
+endfunction
 
-from vi_change_color_scheme import vi_change_color_scheme_example
-
-for n in range(5):
-    print(vi_change_color_scheme_example())
-
+function! PrevColorScheme()
+python << endOfPython
+schemes = vim.eval("g:vi_change_color_scheme_list")
+cur_scheme_idx = int(vim.eval("g:vi_change_color_scheme_default"))
+cur_scheme_idx = cur_scheme_idx-1 if cur_scheme_idx > 0 else len(schemes)-1
+vim.command("let g:vi_change_color_scheme_default = " + str(cur_scheme_idx))
+vim.command('colorscheme ' + schemes[cur_scheme_idx])
+print "Colorscheme set to:", schemes[cur_scheme_idx]
 endOfPython
 endfunction
 
 " --------------------------------
 "  Expose our commands to the user
 " --------------------------------
-command! Example call TemplateExample()
+command! NextColorScheme call NextColorScheme()
+command! PrevColorScheme call PrevColorScheme()
