@@ -1,0 +1,27 @@
+*vi-change-color-scheme.txt* A short multi line description of your plugin
+
+===============================================================================
+CONTENTS                                               *vi-change-color-scheme*
+
+    1. Intro ................................... |vi-change-color-scheme-intro|
+    2. Requirements ..................... |vi-change-color-scheme-requirements|
+    3. Usage ................................... |vi-change-color-scheme-usage|
+    4. Licence ............................... |vi-change-color-scheme-licence|
+===============================================================================
+1. Intro                                         *vi-change-color-scheme-intro*
+
+Overview of plugin
+
+2. Requirements                           *vi-change-color-scheme-requirements*
+
+What additional programs are required to run the plugin
+
+3. Usage                                         *vi-change-color-scheme-usage*
+
+How to use the plugin. What functions does it give the user?
+
+4. Licence                                     *vi-change-color-scheme-licence*
+
+This is open source make sure to include a licence
+
+vim:ft=help
