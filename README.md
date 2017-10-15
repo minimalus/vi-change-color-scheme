@@ -16,7 +16,14 @@ Use your plugin manager of choice.
   - Add `Plug 'https://github.com/minimalus/vi-change-color-scheme'` to .vimrc
   - Run `:PlugInstall`
 
-## Todo
+## Configuration
+    " Set colorschemes for vi-change-color-scheme                                                                                                     
+    let g:vi_change_color_scheme_list = ['badwolf', 'Benokai', 'molokai', '256-grayvim', 'molokai', 'neverland-darker', 'midnight', 'dracula']        
+    let g:vi_change_color_scheme_default = 0                                                                                                          
+    map <F8> :NextColorScheme<CR>                                                                                                                     
+    map <F7> :PrevColorScheme<CR> 
 
-1. Write a plugin
-2. Write documentation
+
+## Todo
+  - Write documentation
+  - Add error handling
